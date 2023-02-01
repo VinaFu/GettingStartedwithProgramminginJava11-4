@@ -2,9 +2,8 @@
 
 8. String Formatting - Concatenation VS. Formatting
   
-  [[ Flag ]] && [[ Argument]]
-      %                $/<
-   
+   [[ Flag ]] && [[ Argument]]
+  
         Concatenation - combine different variables (and strings) together.
         Formatting - String.format() method returns a formatted string using the given locale, specified format string, and arguments. usually seen as %
     
