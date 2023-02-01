@@ -1,21 +1,22 @@
 # GettingStartedwithProgramminginJava11-4
 
 8. String Formatting - Concatenation VS. Formatting
-[[ Flag ]] && [[ Argument]]
-   %                $/<
+  
+  [[ Flag ]] && [[ Argument]]
+      %                $/<
    
         Concatenation - combine different variables (and strings) together.
         Formatting - String.format() method returns a formatted string using the given locale, specified format string, and arguments. usually seen as %
     
-    e.g
+e.g
     
-    int david = 17, dawson = 15, dillon = 8, gordon = 6;
-        double avgDiff = ((david - dawson) + (dawson - dillon) + (dillon -gordon)) / 3.0d;
-        String s4 = String.format(
-                "The average are between each is %.1f years", avgDiff
-        );  // % means quote the avgDiff;
-            //1f refers to a floating point number, with 1 digit after the decimal (the .)
-        System.out.println(s4);     // The average are between each is 3.7 years
+       int david = 17, dawson = 15, dillon = 8, gordon = 6;
+           double avgDiff = ((david - dawson) + (dawson - dillon) + (dillon -gordon)) / 3.0d;
+           String s4 = String.format(
+                   "The average are between each is %.1f years", avgDiff
+           );  // % means quote the avgDiff;
+               //1f refers to a floating point number, with 1 digit after the decimal (the .)
+           System.out.println(s4);     // The average are between each is 3.7 years
         
 Common format conversions   
      
@@ -27,8 +28,8 @@ Common format conversions
         
 Format Specificer
 
-    % [flags] [width] [.precision] [argsize] typechar
-        
+       % [flags] [width] [.precision] [argsize] typechar
+
         
       int iVal = 32;
         String s1 = String.format("%d", iVal);
@@ -76,7 +77,7 @@ Format Specificer
             // W:5     X:235 
             // Y: 481  Z:  12
          
-Format Flag ,
+Format Flag , - numeric values.// "%,.2f" round it into two decimal places
 
         int iVal = 1234567;
         String s1 = String.format("%,d", iVal);
@@ -84,7 +85,7 @@ Format Flag ,
             
         double dVal =1234567.0d; // define first, then manipulate
         String s1 = String.format("%,.2f", dVal);
-            // 1,234,567.00
+            // 1,234,567.00 - .2f rounding
             
  (http://www.java2s.com/Tutorials/Java/Java_Format/0080__Java_Format_Flags.htm)
  
@@ -96,6 +97,8 @@ Format Flag ,
     '0'	Add zero padded. Applies only to numeric values.
     '('	Add parentheses for a negative number. It applies only to numeric values.
     '<'	Reuse the argument for the previous format specifier. It is mostly used in formatting dates and times.
+
+Actual use of flag:
 
       ' ' - space holder
       
