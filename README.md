@@ -1,7 +1,9 @@
 # GettingStartedwithProgramminginJava11-4
 
 8. String Formatting - Concatenation VS. Formatting
-
+[[ Flag ]] && [[ Argument]]
+   %                $/<
+   
         Concatenation - combine different variables (and strings) together.
         Formatting - String.format() method returns a formatted string using the given locale, specified format string, and arguments. usually seen as %
     
@@ -17,10 +19,11 @@
         
 Common format conversions   
      
-        d - decimal - interger
-        f - floating 
-        s - string
-        # - flag with x or X - integer hexadecimal
+        %d - decimal - interger
+        %f - floating 
+                %2f - round it to 2 decimal places
+        %s - string
+        %# - flag with x or X - integer hexadecimal
         
 Format Specificer
 
@@ -96,6 +99,7 @@ Format Flag ,
 
       ' ' - space holder
       
+        int iPosVal = 123, iNegVal = -456;
         String s1 = String.format("%4d", iPosVal);
         String s2 = String.format("%4d", iNegVal);
         or
@@ -110,7 +114,33 @@ Format Flag ,
          String s2 = String.format("%+d", iNegVal); 
                 // +123
                 // -456
+                
+       '%(d' - positive no; negative - ()
+       
+         String s1 = String.format("%(d", iPosVal);
+         String s2 = String.format("%(d", iNegVal);  
+                // 123
+                // (456)  same size: %(4d or %( d
+         
+         
+         String s1 = String.format("%d %d %d ", iPosVal, iNegVal, iNumber);
+         String s2 = String.format("%3$d %1$d %2$d ", iPosVal, iNegVal, iNumber);
 
-            
-            
-            
+         System.out.println(s1);
+         System.out.println(s2);   
+
+Argument
+
+        $ - order
+        String s1 = String.format("%d %d %d ", iPosVal, iNegVal, iNumber);
+        String s2 = String.format("%3$d %1$d %2$d ", iPosVal, iNegVal, iNumber);
+        System.out.println(s1);
+        System.out.println(s2);
+                // 100 200 300 
+                // 300 100 200 - %3$d %1$d %2$d: change the order here.
+                
+        < - copy the last value
+        String s2 = String.format("%2$d %<d %1$d ", iPosVal, iNegVal, iNumber); 
+                // 200 200 100 
+                
+        
